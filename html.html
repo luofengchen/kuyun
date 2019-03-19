@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <script src="./jquery.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .box .tvhou {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <video class="tvhou" width="100%" height="100%" controls="controls" autoplay="autoplay" x-webkit-airplay="true"
+            x5-video-player-fullscreen="true" preload="auto" playsinline="true" webkit-playsinline x5-video-player-typ="h5">
+            <source type="application/x-mpegURL" src="">
+        </video> -->
+        <iframe class="tvhou" src="" width="100%" height="100%">
+            <p>Your browser does not support iframes.</p>
+        </iframe>
+    </div>
+    <script>
+        var url = "https://www.bihaijx.com/kkm3u8.php?";
+        var path = "url=https://pptv.com-h-pptv.com/20190318/16307_409b8b0c/1000k/hls/index.m3u8";
+        var src = url + path;
+        $(".tvhou").attr({
+            "src": src
+        })
+        console.log('输出信息:', $("html body").height(), window.screen.height, window.screen.availHeight, $(window).height());
+        $(".tvhou").css({
+            "height": $(window).height() + "px"
+        })
+    </script>
+</body>
+
+</html>
